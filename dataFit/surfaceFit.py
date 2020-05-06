@@ -33,6 +33,87 @@
 
 
 
+
+
+def surface1stOrder(data=None):
+
+    import numpy as np
+    import scipy.linalg
+
+    '''  #  will need to check that the data is delivered  '''
+
+    mn = np.min(data, axis=0)
+    mx = np.max(data, axis=0)
+
+    #  create a grid of values across the range of the data
+    #  the 3rd value in each call (not mn[] or mx[]) is how many points
+    #  increase this number for "better" fit but slower
+    X,Y = np.meshgrid(np.linspace(mn[0], mx[0], 30),
+                      np.linspace(mn[1], mx[1], 30))
+
+    #  convert the 2D array to single long list of values
+    XX = X.flatten()
+    YY = Y.flatten()
+
+    #  best-fit linear plane (1st-order)
+    #  start either with an array of 1's, or an array of random numbers
+    #  array of random numbers may be better as already has 'shape'
+    #  A1 = np.c_[data[:,0], data[:,1], np.ones(data.shape[0])]
+    A1 = np.c_[np.random.rand(data.shape[0]), data[:,0], data[:,1]]
+
+    #  use a least square minimisation to find the coefficients of equation
+    C1,_,_,_ = scipy.linalg.lstsq(A1, data[:,2])
+
+    # evaluate the solution on a grid
+    Z = C1[0] + C1[1]*X + C1[2]*Y
+
+    return(C1,X,Y,Z)
+
+
+
+
+
+def surface2ndOrder(data=None):
+
+    import numpy as np
+    import scipy.linalg
+
+    '''  #  will need to check that the data is delivered  '''
+
+    mn = np.min(data, axis=0)
+    mx = np.max(data, axis=0)
+
+    #  create a grid of values across the range of the data
+    #  the 3rd value in each call (not mn[] or mx[]) is how many points
+    #  increase this number for "better" fit but slower
+    X,Y = np.meshgrid(np.linspace(mn[0], mx[0], 30),
+                      np.linspace(mn[1], mx[1], 30))
+
+    #  convert the 2D array to single long list of values
+    XX = X.flatten()
+    YY = Y.flatten()
+
+    #  best-fit linear plane (2nd-order)
+    #  start either with an array of 1's, or an array of random numbers
+    #  array of random numbers may be better as already has 'shape'
+    # A2 = np.c_[np.ones(data.shape[0]), data[:,:2],
+    #            np.prod(data[:,:2], axis=1), data[:,:2]**2]
+    A2 = np.c_[np.random.rand(data.shape[0]), data[:,:2],
+               np.prod(data[:,:2], axis=1), data[:,:2]**2]
+
+    #  use a least square minimisation to find the coefficients of equation
+    C2,_,_,_ = scipy.linalg.lstsq(A2, data[:,2])
+
+    # evaluate the solution on a grid
+    Z = np.dot(np.c_[np.ones(XX.shape),
+               XX, YY, XX*YY, XX**2, YY**2],C2).reshape(X.shape)
+
+    return(C2,X,Y,Z)
+
+
+
+
+
 def surface3rdOrder(data=None):
 
     import numpy as np
