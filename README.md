@@ -1,67 +1,39 @@
-# agPython
+# dataMod
 
-These are a whole range of small sub-functions I have created to help me programming.  
-Many of these rely on others within the package.  I have tried to keep it as function based as possible - forking components where I feel it is possible.
+Data modules I have developed over time.  These should be relatively standalone
+although a few do rely on specific data classes.
+
+There are a number of sub-module folders containing specific data operation
+types, these are listed below in the components section.
 
 *BADGES* - can add badges of metadata such as version info  ([shields.io](https://shields.io/) gives many good options).
 
 ## Components
 
-| fileOps | | dataOps | | pbtOps  | |  mcOps  | |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `legacy`| fileSplit | `dataClass` | TWODdata | | | | TPStoMC |
-| | selectFile | | W2CADdata | | | | |
-| | | | pbtDICOM | | | | |
-| | | `dataFit` | dosePosition | | | | |
-| | | | fitGaussian | | | | |
-| | | | fitLine | | | | |
-| | | | surface1st/2nd/3rdOrder| | | | |
-| | | `dataManip` | basicSmooth| | | | |
-| | | | centralisedSmooth| | | | |
+| `dataClass` | TWODdata                |
+|             | W2CADdata               |
+|             | pbtDICOM                |
+| `dataFit`   | dosePosition            |
+|             | fitGaussian             |
+|             | fitLine                 |
+|             | surface1st/2nd/3rdOrder |
+| `dataManip` | basicSmooth             |
+|             | centralisedSmooth       |
 
-###  fileOps
-
-**legacy** -
-older files that are now semi-redundant, kept to maintain older
-
-###  dataOps
-
-**dataClass**  -
+## dataClass
 data classes in for easier data manipulation
 
-**dataManip** -
+## dataManip
 data manipulation functions, currently for smoothing
 
-**dataFit** -
+## dataFit
 methods for fitting data
-
-###  pbtOps
-
-### mcOps
 
 # Installation
 
 Clone the repo to a location on your system.
 
 ## Requirements
-
-Current laptop `pip freeze`
-
-```
-cycler==0.10.0
-easygui==0.98.1
-kiwisolver==1.0.1
-matplotlib==3.0.0
-numpy==1.15.2
-pandas==0.23.4
-pydicom==1.2.2
-pyparsing==2.2.1
-python-dateutil==2.7.3
-pytz==2018.7
-scipy==1.1.0
-seaborn==0.9.0
-six==1.11.0
-```
 
 ## Tests
 
@@ -81,7 +53,7 @@ If you are using multiple file systems, this can be done in a system independent
 Then use:
 
 ```python
-import agPython
+import dataMod
 ```
 
 # Limitations / Known Bugs
@@ -91,7 +63,7 @@ Anything you know doesn't work
 # Contribute
 
 Pull requests are welcome.  
-For major changes, please open a ticket first to discuss desired changes:  [agPython/issues](http://github.com/agosling/agPython/issues)
+For major changes, please open a ticket first to discuss desired changes:  [agPython/issues](http://github.com/UCLHp/dataMod/issues)
 
 If making changes, please check all tests and add if required.
 
