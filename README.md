@@ -10,24 +10,23 @@ types, these are listed below in the components section.
 
 ## Components
 
-| `dataClass` | TWODdata                |
-|             | W2CADdata               |
-|             | pbtDICOM                |
-| `dataFit`   | dosePosition            |
-|             | fitGaussian             |
-|             | fitLine                 |
-|             | surface1st/2nd/3rdOrder |
-| `dataManip` | basicSmooth             |
-|             | centralisedSmooth       |
+### dataClass
+data classes in for easier data manipulation  
+**TWODdata**  
+**W2CADdata**  
+**pbtDICOM**  
 
-## dataClass
-data classes in for easier data manipulation
+### dataManip
+data manipulation functions, currently for smoothing  
+**dosePosition**  
+**fitGaussian**  
+**fitLine**  
+**surface1st/2nd/3rdOrder**  
 
-## dataManip
-data manipulation functions, currently for smoothing
-
-## dataFit
-methods for fitting data
+### dataFit
+methods for fitting data  
+**basicSmooth**  
+**centralisedSmooth**  
 
 # Installation
 
@@ -63,7 +62,7 @@ Anything you know doesn't work
 # Contribute
 
 Pull requests are welcome.  
-For major changes, please open a ticket first to discuss desired changes:  [agPython/issues](http://github.com/UCLHp/dataMod/issues)
+For major changes, please open a ticket first to discuss desired changes:  [dataMod/issues](http://github.com/UCLHp/dataMod/issues)
 
 If making changes, please check all tests and add if required.
 
