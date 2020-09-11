@@ -40,14 +40,17 @@ Included tests, how to use them, what results to expect
 
 # Usage
 
-Point future python programmes to these files location.  Either add the location of these files to your `$PATH` or use the following commands at the start of each new python programme:
+Point future python programmes to these files location.  Either add the location
+ of these files to your `$PATH` or use the following commands at the start of
+ each new python programme (this should be OS independent):
 
 ``` python
 from sys import path as sysPath
-sysPath.append('[PATH TO THESE PACKAGES]'))
+from os import path as osPath
+sysPath.append(osPath.join(osPath.expanduser('~'),'[PATH TO THESE PACKAGES]'))
 ```
 
-If you are using multiple file systems, this can be done in a system independent way using the python package `os.path`
+
 
 Then use:
 
