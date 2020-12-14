@@ -28,9 +28,30 @@
 
 class W2CADdata:
     def __init__(self):
+        self.type = ''
         self.head = []
         self.params = []
         self.x = []
         self.y = []
         self.z = []
         self.d = []
+
+
+
+
+
+'''
+###  Converter to turn data into the W2CAD data class format
+
+def W2CADconvert(hd=None, pm=None, dx=None, dy=None, dz=None, dd=None):
+
+# w2type = w2cadType()
+def w2cadType():
+    from easygui import buttonbox
+    bxTitle = 'W2CAD file type'
+    bxMsg = 'Select W2CAD file type if known'
+    bxChoice = ['SingleWeT', 'ZposSnout', 'MeasuredSpotFluenceX/Y', 'MeasuredDepthDose']
+    w2type = buttonbox(title=bxTitle, msg=bxMsg, choices=bxChoice, default_choice=bxChoice[0], cancel_choice=bxChoice[0])
+    return(w2type)
+
+'''

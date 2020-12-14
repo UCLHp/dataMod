@@ -1,32 +1,32 @@
 # dataMod
 
-Data modules I have developed over time.  These should be relatively standalone
-although a few do rely on specific data classes.
+Data modules I have developed over time. These should be relatively standalone although a few do rely on specific data classes.
 
-There are a number of sub-module folders containing specific data operation
-types, these are listed below in the components section.
+There are a number of sub-module folders containing specific data operation types, these are listed below in the components section.
 
-*BADGES* - can add badges of metadata such as version info  ([shields.io](https://shields.io/) gives many good options).
+_BADGES_ - can add badges of metadata such as version info ([shields.io](https://shields.io/) gives many good options).
 
 ## Components
 
 ### dataClass
-data classes in for easier data manipulation  
-**TWODdata**  
-**W2CADdata**  
-**pbtDICOM**  
+
+data classes in for easier data manipulation<br>
+**TWODdata**<br>
+**pbtDICOM**
 
 ### dataManip
-data manipulation functions, currently for smoothing  
-**dosePosition**  
-**fitGaussian**  
-**fitLine**  
-**surface1st/2nd/3rdOrder**  
+
+data manipulation functions, currently for smoothing<br>
+**dosePosition**<br>
+**fitGaussian**<br>
+**fitLine**<br>
+**surface1st/2nd/3rdOrder**
 
 ### dataFit
-methods for fitting data  
-**basicSmooth**  
-**centralisedSmooth**  
+
+methods for fitting data<br>
+**basicSmooth**<br>
+**centralisedSmooth**
 
 # Installation
 
@@ -40,17 +40,13 @@ Included tests, how to use them, what results to expect
 
 # Usage
 
-Point future python programmes to these files location.  Either add the location
- of these files to your `$PATH` or use the following commands at the start of
- each new python programme (this should be OS independent):
+Point future python programmes to these files location. Either add the location of these files to your `$PATH` or use the following commands at the start of each new python programme (this should be OS independent):
 
-``` python
+```python
 from sys import path as sysPath
 from os import path as osPath
 sysPath.append(osPath.join(osPath.expanduser('~'),'[PATH TO THESE PACKAGES]'))
 ```
-
-
 
 Then use:
 
@@ -64,8 +60,8 @@ Anything you know doesn't work
 
 # Contribute
 
-Pull requests are welcome.  
-For major changes, please open a ticket first to discuss desired changes:  [dataMod/issues](http://github.com/UCLHp/dataMod/issues)
+Pull requests are welcome.<br>
+For major changes, please open a ticket first to discuss desired changes: [dataMod/issues](http://github.com/UCLHp/dataMod/issues)
 
 If making changes, please check all tests and add if required.
 
@@ -75,7 +71,7 @@ All code within this package distributed under [GNU GPL-3.0 (or higher)](https:/
 
 Full license text contained within the file LICENCE.
 
-###  (C) License for all programmes
+## (C) License for all programmes
 
 ```
 ###  Copyright (C) 2020:  Andrew J. Gosling
